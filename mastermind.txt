@@ -11,6 +11,7 @@ Player <|-- CodeBreaker
 CodeMaker --> "Winner pattern"
 
 "Winner pattern" *-- "5" Pegs
+"Pattern trial" *-- "5" Pegs
 
 
 CodeBreaker --> "1..n" "Pattern trial"
