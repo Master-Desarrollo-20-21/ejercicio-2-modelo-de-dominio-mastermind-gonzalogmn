@@ -1,29 +1,29 @@
 @startuml
 
-Partida *-- "1" Tablero
-Partida *-- "2" Jugador
-Partida *-- Clavijas
-Partida *-- Turno
+Play *-- "1" Board
+Play *-- "2" Player
+Play *-- Pegs
+Play *-- Turn
 
-Jugador <|-- Jugador1
-Jugador <|-- Jugador2
+Player <|-- CodeMaker
+Player <|-- CodeBreaker
 
-Jugador1 --> "Combinación ganadora"
+CodeMaker --> "Winner pattern"
 
-"Combinación ganadora" *-- "5" Clavijas
-
-
-Jugador2 --> "1..n" Combinación
-Jugador2 --> Turno
-
-Combinación *-- "5" Clavijas
+"Winner pattern" *-- "5" Pegs
 
 
-Turno *-- "1" Combinación
-Turno *-- "1" Conteo
+CodeBreaker --> "1..n" Pattern
+CodeBreaker --> Turn
 
-Tablero *-- "12" Fila
+Pattern *-- "5" Pegs
 
-Fila *-- "5" Casilla
+
+Turn *-- "1" Pattern
+Turn *-- "1" PartialScoring
+
+Board *-- "12" Row
+
+Row *-- "5" Cell
 
 @enduml
