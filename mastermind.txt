@@ -1,0 +1,28 @@
+@startuml
+
+Partida *-- "1" Tablero
+Partida *-- "2" Jugador
+Partida *-- Clavijas
+Partida *-- Turno
+
+Jugador <|-- Jugador1
+Jugador <|-- Jugador2
+
+Jugador1 --> "Combinación ganadora"
+
+"Combinación ganadora" *-- "5" Clavijas
+
+
+Jugador2 --> "1..n" Combinación
+
+Combinación *-- "5" Clavijas
+
+
+Turno *-- "1" Combinación
+Turno *-- "1" Conteo
+
+Tablero *-- "12" Fila
+
+Fila *-- "5" Casilla
+
+@enduml
