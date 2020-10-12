@@ -3,7 +3,7 @@
 Mastermind *-- "1" Board
 Mastermind *-- "2" Player
 Mastermind *-- Pegs
-Mastermind *-- Turn
+Mastermind *-- "1..12" Turn
 
 Player <|-- CodeMaker
 Player <|-- CodeBreaker
