@@ -1,9 +1,9 @@
 @startuml
 
-Play *-- "1" Board
-Play *-- "2" Player
-Play *-- Pegs
-Play *-- Turn
+Mastermind *-- "1" Board
+Mastermind *-- "2" Player
+Mastermind *-- Pegs
+Mastermind *-- Turn
 
 Player <|-- CodeMaker
 Player <|-- CodeBreaker
@@ -13,13 +13,16 @@ CodeMaker --> "Winner pattern"
 "Winner pattern" *-- "5" Pegs
 
 
-CodeBreaker --> "1..n" Pattern
+CodeBreaker --> "1..n" "Pattern trial"
 CodeBreaker --> Turn
+
+Pattern <|-- "Pattern trial"
+Pattern <|-- "Winner pattern"
 
 Pattern *-- "5" Pegs
 
 
-Turn *-- "1" Pattern
+Turn *-- "1" "Pattern trial"
 Turn *-- "1" PartialScoring
 
 Board *-- "12" Row
